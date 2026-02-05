@@ -642,5 +642,16 @@ RenderGui::getFastRenderMode() const
     return mViewport->getFastMode();
 }
 
+void
+RenderGui::setContext(moonray::rndr::RenderContext *ctx)
+{
+    mRenderContext = ctx;
+
+    if (mViewport) {
+        // Keep the viewport's RenderContext pointer in sync with the current context
+        mViewport->updateRenderContext(ctx);
+    }
+}
+
 
 } // namespace moonray_gui_v2

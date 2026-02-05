@@ -102,18 +102,15 @@ ImageDisplay::drawPathVisualizerLines(moonray::rndr::PathVisualizerManager* mana
     
     using PosType = scene_rdl2::grid_util::VectorPacketLineStatus::PosType;
 
-    auto lineDrawingCallback = [manager, this, size](const scene_rdl2::math::Vec2i& s,
-                                                     const scene_rdl2::math::Vec2i& e,
-                                                     const uint8_t& flags,
-                                                     const float a,
-                                                     const float w,
-                                                     const bool drawEndPoint,
-                                                     const unsigned nodeId,
-                                                     const PosType startPosType,
-                                                     const PosType endPosType) {
-        // Manager could have been deleted since we set up the callback
-        if (!manager) { return; }
-
+    auto lineDrawingCallback = [&](const scene_rdl2::math::Vec2i& s,
+                                   const scene_rdl2::math::Vec2i& e,
+                                   const uint8_t& flags,
+                                   const float a,
+                                   const float w,
+                                   const bool drawEndPoint,
+                                   const unsigned nodeId,
+                                   const PosType startPosType,
+                                   const PosType endPosType) {
         // Check if the line should be visible based on user settings
         if (!manager->showRay(flags)) { return; }
 

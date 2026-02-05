@@ -137,12 +137,16 @@ public:
 
     // Get pointer to path visualizer manager
     moonray::rndr::PathVisualizerManager* getPathVisualizerManager() const { 
+        if (!mRenderContext) return nullptr;
         return mRenderContext->getPathVisualizerManager().get(); 
     };
 
     /// ---------------------------------- Setters ----------------------------------------- ///
     // Sets the render context for the cameras
     void setCameraRenderContext(RenderContext &context);
+
+    // Updates the render context pointer (called when RenderContext is recreated)
+    void updateRenderContext(RenderContext* context) { mRenderContext = context; }
 
     // Sets the default camera transform
     void setDefaultCameraTransform(const scene_rdl2::math::Mat4f &xform);
@@ -277,7 +281,7 @@ private:
     float mExposure {0.f};                                      // current exposure value
     float mGamma {1.f};                                         // current gamma value
 
-    int mRenderOutputIndex {0};                                 // Current render output index
+    int mRenderOutputIndex {-1};                                // Current render output index
     bool mProgressiveFast {false};                              // Whether fast progressive mode is on
     FastRenderMode mFastMode {FastRenderMode::NORMALS};         // Current fast progressive mode
     int mInspectorMode {INSPECT_NONE};                          // Current inspector mode
