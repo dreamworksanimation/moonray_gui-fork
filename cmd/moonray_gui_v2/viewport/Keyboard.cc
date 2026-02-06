@@ -1,4 +1,4 @@
-// Copyright 2025 DreamWorks Animation LLC
+// Copyright 2026 DreamWorks Animation LLC
 // SPDX-License-Identifier: Apache-2.0
 
 #include "Keyboard.h"
@@ -54,8 +54,12 @@ KeyboardBindings::KeyboardBindings()
     mKeyBindings.insert(KeyModPair(GLFW_KEY_SPACE, MOD_NONE), ACTION_CAM_UP);
     
     mKeyBindings.insert(KeyModPair(GLFW_KEY_N, GLFW_MOD_SHIFT), ACTION_DENOISE_TOGGLE_MODE);
+    mKeyBindings.insert(KeyModPair(GLFW_KEY_V, GLFW_MOD_SHIFT), ACTION_PATH_VISUALIZER_ON_OFF);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_X, GLFW_MOD_SHIFT), ACTION_EXPOSURE_RESET);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_Y, GLFW_MOD_SHIFT), ACTION_GAMMA_RESET);
+    mKeyBindings.insert(KeyModPair(GLFW_KEY_LEFT, GLFW_MOD_SHIFT), ACTION_PATH_VISUALIZER_PREV_NODE);
+    mKeyBindings.insert(KeyModPair(GLFW_KEY_RIGHT, GLFW_MOD_SHIFT), ACTION_PATH_VISUALIZER_NEXT_NODE);
+
     mKeyBindings.insert(KeyModPair(GLFW_KEY_UP, GLFW_MOD_ALT), ACTION_FAST_PROGRESSIVE_NEXT_MODE);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_DOWN, GLFW_MOD_ALT), ACTION_FAST_PROGRESSIVE_PREV_MODE);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_K, GLFW_MOD_ALT), ACTION_WINDOW_TOGGLE_SNAPSHOT);

@@ -1,4 +1,4 @@
-// Copyright 2025 DreamWorks Animation LLC
+// Copyright 2026 DreamWorks Animation LLC
 // SPDX-License-Identifier: Apache-2.0
 
 #include "GuiTypes.h"
@@ -58,6 +58,9 @@ std::string getActionName(const Action action) {
     case ACTION_WINDOW_TOGGLE_STATUS:           return "Window Toggle Status";
     case ACTION_SAVE_IMAGE:                     return "Save Image";
     case ACTION_PICK_PATH_VISUALIZER_PIXEL:     return "Pick Path Visualizer Pixel";
+    case ACTION_PATH_VISUALIZER_ON_OFF:         return "Turn Path Visualizer On/Off";
+    case ACTION_PATH_VISUALIZER_PREV_NODE:      return "Path Visualizer Previous Node";
+    case ACTION_PATH_VISUALIZER_NEXT_NODE:      return "Path Visualizer Next Node";
     case ACTION_CAM_TOGGLE_ACTIVE_TYPE:         return "Camera Toggle Active Type";
     case ACTION_TILE_PROGRESS_TOGGLE:           return "Tile Progress Toggle";
     case ACTION_RENDER_OUTPUT_PREV:             return "Render Output Previous";

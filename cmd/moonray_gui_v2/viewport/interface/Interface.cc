@@ -1,5 +1,5 @@
 
-// Copyright 2025 DreamWorks Animation LLC
+// Copyright 2026 DreamWorks Animation LLC
 // SPDX-License-Identifier: Apache-2.0
 
 #include "Interface.h"
@@ -112,16 +112,19 @@ Interface::handleKeyPressEvent(const Action action)
     if (mKeyBindingsWindow->isCapturing()) { return true; }
 
     switch(action) {
-    case ACTION_WINDOW_TOGGLE_EXPOSURE:         toggleExposureWindow();         return true;
-    case ACTION_WINDOW_TOGGLE_GAMMA:            toggleGammaWindow();            return true;
-    case ACTION_WINDOW_TOGGLE_KEY_BINDINGS:     toggleKeyBindings();            return true;
-    case ACTION_WINDOW_TOGGLE_PATH_VISUALIZER:  togglePathVisualizerWindow();   return true;
-    case ACTION_WINDOW_TOGGLE_PIXEL_INSPECTOR:  togglePixelInspector();         return true;
-    case ACTION_WINDOW_TOGGLE_SCENE_INSPECTOR:  toggleSceneInspector();         return true;
-    case ACTION_WINDOW_TOGGLE_SNAPSHOT:         toggleSnapshotWindow();         return true;
-    case ACTION_WINDOW_TOGGLE_STATUS:           toggleStatusBar();              return true;
-    case ACTION_SNAPSHOT_PREV:                  mViewport->showPrevSnapshot();  return true;
-    case ACTION_SNAPSHOT_NEXT:                  mViewport->showNextSnapshot();  return true;
+    case ACTION_WINDOW_TOGGLE_EXPOSURE:         toggleExposureWindow();              return true;
+    case ACTION_WINDOW_TOGGLE_GAMMA:            toggleGammaWindow();                 return true;
+    case ACTION_WINDOW_TOGGLE_KEY_BINDINGS:     toggleKeyBindings();                 return true;
+    case ACTION_WINDOW_TOGGLE_PATH_VISUALIZER:  togglePathVisualizerWindow();        return true;
+    case ACTION_WINDOW_TOGGLE_PIXEL_INSPECTOR:  togglePixelInspector();              return true;
+    case ACTION_WINDOW_TOGGLE_SCENE_INSPECTOR:  toggleSceneInspector();              return true;
+    case ACTION_WINDOW_TOGGLE_SNAPSHOT:         toggleSnapshotWindow();              return true;
+    case ACTION_WINDOW_TOGGLE_STATUS:           toggleStatusBar();                   return true;
+    case ACTION_SNAPSHOT_PREV:                  mViewport->showPrevSnapshot();       return true;
+    case ACTION_SNAPSHOT_NEXT:                  mViewport->showNextSnapshot();       return true;
+    case ACTION_PATH_VISUALIZER_ON_OFF:         mViewport->pathVisualizerToggleOn(); return true;
+    case ACTION_PATH_VISUALIZER_NEXT_NODE:      mViewport->nextPathVisualizerNode(); return true;
+    case ACTION_PATH_VISUALIZER_PREV_NODE:      mViewport->prevPathVisualizerNode(); return true;
     default: break;
     }
     return false;

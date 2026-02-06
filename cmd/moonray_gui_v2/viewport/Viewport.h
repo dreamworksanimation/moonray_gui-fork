@@ -1,4 +1,4 @@
-// Copyright 2025 DreamWorks Animation LLC
+// Copyright 2026 DreamWorks Animation LLC
 // SPDX-License-Identifier: Apache-2.0
 
 #pragma once
@@ -55,7 +55,14 @@ public:
     // Show previous/next snapshot
     void showPrevSnapshot();
     void showNextSnapshot();
-    
+
+    // Toggle path visualizer on/off
+    void pathVisualizerToggleOn();
+
+    // Select the next/prev node
+    void prevPathVisualizerNode();
+    void nextPathVisualizerNode();
+
     // -------------------------------------- Getters --------------------------------------- //
     // Checks if the GLFW window has been closed
     bool isWindowOpen() const;
@@ -141,6 +148,8 @@ public:
         return mRenderContext->getPathVisualizerManager().get(); 
     };
 
+    bool getPVShowOnlyEndpoints() const { return mPVShowOnlyEndpoints; }
+
     /// ---------------------------------- Setters ----------------------------------------- ///
     // Sets the render context for the cameras
     void setCameraRenderContext(RenderContext &context);
@@ -162,6 +171,9 @@ public:
 
     // Sets whether the viewport texture needs to be refreshed
     void setNeedsRefresh(const bool refresh) { mNeedsRefresh = refresh; }
+
+    // Sets the path visualizer setting to show only endpoints
+    void setPVShowOnlyEndpoints(const bool show) { mPVShowOnlyEndpoints = show; }
 
 private:
     // Uses the framebuffer data to update the viewport display
@@ -295,6 +307,8 @@ private:
     bool mSnapshotsLoaded {false};                              // have we loaded existing snapshots yet?
 
     bool mOpen {true};                                          // whether the viewport is open
+
+    bool mPVShowOnlyEndpoints {false};                          // if path visualizer should only display endpoints
 };
    
 } // namespace moonray_gui_v2

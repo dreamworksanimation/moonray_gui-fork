@@ -1,4 +1,4 @@
-// Copyright 2025 DreamWorks Animation LLC
+// Copyright 2026 DreamWorks Animation LLC
 // SPDX-License-Identifier: Apache-2.0
 
 #pragma once
@@ -129,8 +129,13 @@ enum Action
     ACTION_SNAPSHOT_PREV,
     ACTION_SNAPSHOT_NEXT,
 
-    // Misc actions
+    // Path visualizer actions
     ACTION_PICK_PATH_VISUALIZER_PIXEL,
+    ACTION_PATH_VISUALIZER_ON_OFF,
+    ACTION_PATH_VISUALIZER_PREV_NODE,
+    ACTION_PATH_VISUALIZER_NEXT_NODE,
+
+    // Misc actions
     ACTION_TILE_PROGRESS_TOGGLE,
     ACTION_PRINT_KEY_BINDINGS,
 

@@ -1,4 +1,4 @@
-// Copyright 2025 DreamWorks Animation LLC
+// Copyright 2026 DreamWorks Animation LLC
 // SPDX-License-Identifier: Apache-2.0
 
 #include "KeyBindingsWindow.h"
@@ -80,8 +80,11 @@ const std::set<Action> VISUALIZATION_ACTIONS = {
     ACTION_FAST_PROGRESSIVE_TOGGLE,
     ACTION_FAST_PROGRESSIVE_NEXT_MODE,
     ACTION_FAST_PROGRESSIVE_PREV_MODE,
+    ACTION_TILE_PROGRESS_TOGGLE,
+    ACTION_PATH_VISUALIZER_ON_OFF,
     ACTION_PICK_PATH_VISUALIZER_PIXEL,
-    ACTION_TILE_PROGRESS_TOGGLE
+    ACTION_PATH_VISUALIZER_PREV_NODE,
+    ACTION_PATH_VISUALIZER_NEXT_NODE
 };
 } // end anonymous namespace
 
