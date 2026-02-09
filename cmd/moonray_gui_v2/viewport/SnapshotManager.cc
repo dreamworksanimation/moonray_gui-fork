@@ -45,7 +45,9 @@ bool validateSnapPath(const std::string& snapPath)
         if (!testFile.is_open()) {
             return warn("Invalid permissions for snapshot path");
         }
+        // Clean up the temp file
         testFile.close();
+        std::filesystem::remove(testFilePath);
     }
     return true;
 }
