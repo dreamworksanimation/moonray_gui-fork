@@ -85,6 +85,14 @@ Here are the hotkey mappings (the changed hotkeys have stars next to them):
 | Open/Close Exposure Editor* | `ALT` + `X` | Previously `X` |
 | Open/Close Gamma Editor* | `ALT` + `Y` | Previously `Y` |
 | Open/Close Path Visualizer | `V` | |
+| Open/Close Axis Display | `SHIFT` + `A` | new in v2 |
+
+### Path Visualizer
+| Action | Hotkey | Notes |
+| Toggle On/Off | `SHIFT` + `V` | |
+| Pick pixel | `LMB` | |
+| Previous node | `SHIFT` + `LEFT` | |
+| Next node | `SHIFT` + `RIGHT` | |
 
 ### Miscellaneous Hotkeys
 | Action | Hotkey | Notes |

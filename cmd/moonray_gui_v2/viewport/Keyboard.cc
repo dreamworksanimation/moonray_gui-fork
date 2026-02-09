@@ -52,7 +52,8 @@ KeyboardBindings::KeyboardBindings()
     mKeyBindings.insert(KeyModPair(GLFW_KEY_UP, MOD_NONE), ACTION_EXPOSURE_INCREASE);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_DOWN, MOD_NONE), ACTION_EXPOSURE_DECREASE);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_SPACE, MOD_NONE), ACTION_CAM_UP);
-    
+
+    mKeyBindings.insert(KeyModPair(GLFW_KEY_A, GLFW_MOD_SHIFT), ACTION_WINDOW_TOGGLE_AXIS_DISPLAY);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_N, GLFW_MOD_SHIFT), ACTION_DENOISE_TOGGLE_MODE);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_V, GLFW_MOD_SHIFT), ACTION_PATH_VISUALIZER_ON_OFF);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_X, GLFW_MOD_SHIFT), ACTION_EXPOSURE_RESET);
@@ -66,7 +67,7 @@ KeyboardBindings::KeyboardBindings()
     mKeyBindings.insert(KeyModPair(GLFW_KEY_S, GLFW_MOD_ALT), ACTION_WINDOW_TOGGLE_STATUS);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_X, GLFW_MOD_ALT), ACTION_WINDOW_TOGGLE_EXPOSURE);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_Y, GLFW_MOD_ALT), ACTION_WINDOW_TOGGLE_GAMMA);
-    
+
     mKeyBindings.insert(KeyModPair(GLFW_KEY_S, GLFW_MOD_CONTROL), ACTION_SAVE_IMAGE);
 
     // ---------------- Mouse mappings ------------------

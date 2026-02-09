@@ -40,6 +40,7 @@ target_sources(${target}
         GuiTypes.cc
         RenderGui.cc
 
+        viewport/interface/AxisDisplay.cc
         viewport/interface/Dock.cc
         viewport/interface/DrawUtil.cc
         viewport/interface/ExposureWindow.cc

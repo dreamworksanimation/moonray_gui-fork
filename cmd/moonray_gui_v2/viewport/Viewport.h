@@ -150,6 +150,14 @@ public:
 
     bool getPVShowOnlyEndpoints() const { return mPVShowOnlyEndpoints; }
 
+    // Get whether to update the navigation lines
+    bool getUpdateAxis() const { return mUpdateAxis; }
+
+    // Get the screen-space display vector for the x, y, and z axes
+    const scene_rdl2::math::Vec2f& getAxisXDir() const { return mAxisXDir; }
+    const scene_rdl2::math::Vec2f& getAxisYDir() const { return mAxisYDir; }
+    const scene_rdl2::math::Vec2f& getAxisZDir() const { return mAxisZDir; }
+
     /// ---------------------------------- Setters ----------------------------------------- ///
     // Sets the render context for the cameras
     void setCameraRenderContext(RenderContext &context);
@@ -171,6 +179,9 @@ public:
 
     // Sets whether the viewport texture needs to be refreshed
     void setNeedsRefresh(const bool refresh) { mNeedsRefresh = refresh; }
+
+    // Sets whether we need to update the navigation lines
+    void setUpdateAxis(const bool update) { mUpdateAxis = update; }
 
     // Sets the path visualizer setting to show only endpoints
     void setPVShowOnlyEndpoints(const bool show) { mPVShowOnlyEndpoints = show; }
@@ -307,6 +318,11 @@ private:
     bool mSnapshotsLoaded {false};                              // have we loaded existing snapshots yet?
 
     bool mOpen {true};                                          // whether the viewport is open
+
+    bool mUpdateAxis {false};                                   // whether to update axis direction vectors
+    scene_rdl2::math::Vec2f mAxisXDir;                          // Navigation direction vector for the X axis
+    scene_rdl2::math::Vec2f mAxisYDir;                          // Navigation direction vector for the Y axis
+    scene_rdl2::math::Vec2f mAxisZDir;                          // Navigation direction vector for the Z axis
 
     bool mPVShowOnlyEndpoints {false};                          // if path visualizer should only display endpoints
 };

@@ -207,6 +207,12 @@ Viewport::exec()
         // Update the texture that imgui renders (do this before ImGui layout)
         updateFrame();
 
+        // Update the axis lines, if necessary
+        if (mUpdateAxis) {
+            mRenderContext->getCameraAxesScreenSpace(mAxisXDir, mAxisYDir, mAxisZDir);
+            mUpdateAxis = false;
+        }
+
         // Draws the imgui UI
         mInterface->draw();
 

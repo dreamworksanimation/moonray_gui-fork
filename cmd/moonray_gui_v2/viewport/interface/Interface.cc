@@ -4,6 +4,7 @@
 
 #include "Interface.h"
 
+#include "AxisDisplay.h"
 #include "ExposureWindow.h"
 #include "GammaWindow.h"
 #include "KeyBindingsWindow.h"
@@ -26,6 +27,7 @@ namespace moonray_gui_v2 {
 
 Interface::Interface(Viewport* viewport)
 : mViewport(viewport)
+, mAxisDisplay(std::make_unique<AxisDisplay>())
 , mExposureWindow(std::make_unique<ExposureWindow>())
 , mGammaWindow(std::make_unique<GammaWindow>())
 , mKeyBindingsWindow(std::make_unique<KeyBindingsWindow>())
@@ -82,6 +84,7 @@ Interface::Interface(Viewport* viewport)
     }
 
     // Add UI components here
+    mComponents.push_back(mAxisDisplay.get());
     mComponents.push_back(mExposureWindow.get());
     mComponents.push_back(mGammaWindow.get());
     mComponents.push_back(mKeyBindingsWindow.get());
@@ -125,6 +128,7 @@ Interface::handleKeyPressEvent(const Action action)
     case ACTION_PATH_VISUALIZER_ON_OFF:         mViewport->pathVisualizerToggleOn(); return true;
     case ACTION_PATH_VISUALIZER_NEXT_NODE:      mViewport->nextPathVisualizerNode(); return true;
     case ACTION_PATH_VISUALIZER_PREV_NODE:      mViewport->prevPathVisualizerNode(); return true;
+    case ACTION_WINDOW_TOGGLE_AXIS_DISPLAY:     toggleAxisDisplay();                 return true;
     default: break;
     }
     return false;
@@ -222,6 +226,7 @@ Interface::resizeViewport()
 
 // ------------------- Toggle open/closed windows ----------------------- ///
 
+void Interface::toggleAxisDisplay() { mAxisDisplay->toggle(); }
 void Interface::toggleExposureWindow() { mExposureWindow->toggle(); }
 void Interface::toggleGammaWindow() { mGammaWindow->toggle(); }
 void Interface::toggleKeyBindings() { mKeyBindingsWindow->toggle(); }

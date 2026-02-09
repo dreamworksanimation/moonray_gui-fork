@@ -56,6 +56,7 @@ std::string getActionName(const Action action) {
     case ACTION_WINDOW_TOGGLE_PIXEL_INSPECTOR:  return "Window Toggle Pixel Inspector";
     case ACTION_WINDOW_TOGGLE_SNAPSHOT:         return "Window Toggle Snapshot";
     case ACTION_WINDOW_TOGGLE_STATUS:           return "Window Toggle Status";
+    case ACTION_WINDOW_TOGGLE_AXIS_DISPLAY:     return "Window Toggle Axis Display";
     case ACTION_SAVE_IMAGE:                     return "Save Image";
     case ACTION_PICK_PATH_VISUALIZER_PIXEL:     return "Pick Path Visualizer Pixel";
     case ACTION_PATH_VISUALIZER_ON_OFF:         return "Turn Path Visualizer On/Off";
