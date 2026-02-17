@@ -89,19 +89,6 @@ const std::set<Action> VISUALIZATION_ACTIONS = {
 };
 } // end anonymous namespace
 
-struct ActionCategory {
-    const char* name;
-    const std::set<Action>& actions;
-};
-
-const std::vector<ActionCategory> ACTION_CATEGORIES = {
-    {"Camera",           CAMERA_ACTIONS},
-    {"Color Management", COLOR_MANAGEMENT_ACTIONS},
-    {"Denoising",        DENOISING_ACTIONS},
-    {"Output",           OUTPUT_ACTIONS},
-    {"Viewport",         VIEWPORT_ACTIONS},
-    {"Visualization",    VISUALIZATION_ACTIONS}
-};
 // -------------------------------------- Key Capture Class ------------------------------------------------------------
 
 void
@@ -576,8 +563,8 @@ KeyBindingsWindow::draw(Viewport* viewport, const ImVec2& currentPixel, const Im
 
             // Scrollable content section
             if (ImGui::BeginChild("ContentSection", ImVec2(0, 0), ImGuiChildFlags_None)) {
-                for (const auto& category : ACTION_CATEGORIES) {
-                    drawKeyBindingTable(category.name, category.actions, keyboard);
+                for (const auto& [categoryName, categoryActions] : ACTION_CATEGORIES) {
+                    drawKeyBindingTable(categoryName.c_str(), categoryActions, keyboard);
                 }
                 ImGui::EndChild();
             }

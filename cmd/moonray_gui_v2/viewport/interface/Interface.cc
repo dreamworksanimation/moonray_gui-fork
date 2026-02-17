@@ -7,6 +7,7 @@
 #include "AxisDisplay.h"
 #include "ExposureWindow.h"
 #include "GammaWindow.h"
+#include "HelpWindow.h"
 #include "KeyBindingsWindow.h"
 #include "ImageDisplay.h"
 #include "PathVisualizerWindow.h"
@@ -30,6 +31,7 @@ Interface::Interface(Viewport* viewport)
 , mAxisDisplay(std::make_unique<AxisDisplay>())
 , mExposureWindow(std::make_unique<ExposureWindow>())
 , mGammaWindow(std::make_unique<GammaWindow>())
+, mHelpWindow(std::make_unique<HelpWindow>())
 , mKeyBindingsWindow(std::make_unique<KeyBindingsWindow>())
 , mImageDisplay(std::make_unique<ImageDisplay>())
 , mPathVisualizerWindow(std::make_unique<PathVisualizerWindow>())
@@ -87,6 +89,7 @@ Interface::Interface(Viewport* viewport)
     mComponents.push_back(mAxisDisplay.get());
     mComponents.push_back(mExposureWindow.get());
     mComponents.push_back(mGammaWindow.get());
+    mComponents.push_back(mHelpWindow.get());
     mComponents.push_back(mKeyBindingsWindow.get());
     mComponents.push_back(mPathVisualizerWindow.get());
     mComponents.push_back(mPixelInspector.get());
@@ -98,6 +101,9 @@ Interface::Interface(Viewport* viewport)
     mBottomDock.addComponent(mStatusBar.get());
     mBottomDock.addComponent(mSnapshotWindow.get());
     mRightDock.addComponent(mPathVisualizerWindow.get());
+
+    // Set up callback for help button in StatusBar
+    mStatusBar->setHelpButtonCallback([this]() { this->toggleHelpWindow(); });
 }
 
 Interface::~Interface()
@@ -229,6 +235,7 @@ Interface::resizeViewport()
 void Interface::toggleAxisDisplay() { mAxisDisplay->toggle(); }
 void Interface::toggleExposureWindow() { mExposureWindow->toggle(); }
 void Interface::toggleGammaWindow() { mGammaWindow->toggle(); }
+void Interface::toggleHelpWindow() { mHelpWindow->toggle(); }
 void Interface::toggleKeyBindings() { mKeyBindingsWindow->toggle(); }
 void Interface::togglePathVisualizerWindow() { mPathVisualizerWindow->toggle(); }
 void Interface::togglePixelInspector() { mPixelInspector->toggle(); }

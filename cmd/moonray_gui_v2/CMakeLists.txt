@@ -45,6 +45,7 @@ target_sources(${target}
         viewport/interface/DrawUtil.cc
         viewport/interface/ExposureWindow.cc
         viewport/interface/GammaWindow.cc
+        viewport/interface/HelpWindow.cc
         viewport/interface/Interface.cc
         viewport/interface/ImageDisplay.cc
         viewport/interface/KeyBindingsWindow.cc

@@ -18,6 +18,7 @@ namespace moonray_gui_v2 {
 class AxisDisplay;
 class ExposureWindow;
 class GammaWindow;
+class HelpWindow;
 class ImageDisplay;
 class KeyBindingsWindow;
 class PathVisualizerWindow;
@@ -54,6 +55,7 @@ public:
     void toggleAxisDisplay();
     void toggleExposureWindow();
     void toggleGammaWindow();
+    void toggleHelpWindow();
     void toggleKeyBindings();
     void togglePathVisualizerWindow();
     void togglePixelInspector();
@@ -91,6 +93,7 @@ private:
     std::unique_ptr<AxisDisplay> mAxisDisplay;                   // ptr to axis display component
     std::unique_ptr<ExposureWindow> mExposureWindow;             // ptr to exposure adjustment window
     std::unique_ptr<GammaWindow> mGammaWindow;                   // ptr to gamma adjustment window
+    std::unique_ptr<HelpWindow> mHelpWindow;                     // ptr to help window
     std::unique_ptr<KeyBindingsWindow> mKeyBindingsWindow;       // ptr to keybindings window
     std::unique_ptr<ImageDisplay> mImageDisplay;                 // ptr to gui component displaying the rendered image
     std::unique_ptr<PathVisualizerWindow> mPathVisualizerWindow; // ptr to path visualizer window
