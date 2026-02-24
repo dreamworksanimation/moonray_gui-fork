@@ -208,10 +208,21 @@ RaasGuiApplication::startRenderThread(void* me)
                     currCameraXform = self->mRenderGui->endInteractiveRendering();
 
                     // Apply the deltas to the scene objects
+                    bool geometryChanged = false;
                     for (const std::string & filename : changedDeltaFiles) {
-                        renderContext->updateScene(filename);
+                        if (renderContext->updateScene(filename)) {
+                            // Geometry has changed, trigger a full reload by breaking out of this loop
+                            geometryChanged = true;
+                            break;
+                        }
                     }
+                    
+                    if (geometryChanged) {
+                        break;  // Exit the main loop to trigger full reload
+                    }
+                    
                     changedDeltaFiles.clear();
+                    
                     // Tolerate a double to float precision loss in the gui
                     rdlaCameraXform = toFloat(camera->get(rdl2::Node::sNodeXformKey));
 
