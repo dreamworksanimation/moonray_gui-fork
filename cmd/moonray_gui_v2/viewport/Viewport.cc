@@ -375,7 +375,9 @@ Viewport::inspect(int x, int y) const
                         return l0.second < l1.second;
                     });
         for (unsigned int i = 0; i < rdlLights.size(); ++i) {
-            lightPickResults += "" + rdlLights[i].first->getName() + ": " + std::to_string(rdlLights[i].second) + "\n";
+            lightPickResults += rdlLights[i].first->getName() + ": " + 
+                                std::to_string(rdlLights[i].second) + ", " + 
+                                rdlLights[i].first->getSceneClass().getName() + "\n";
         }
 
         return lightPickResults;
@@ -384,20 +386,20 @@ Viewport::inspect(int x, int y) const
     case INSPECT_GEOMETRY:
         {
             const rdl2::Geometry *geometry = mRenderContext->handlePickGeometry(x, y);
-            if (geometry) { return geometry->getName() + ""; }
+            if (geometry) { return geometry->getName() + "\n" + geometry->getSceneClass().getName(); }
         }
         break;
     case INSPECT_GEOMETRY_PART:
         {
             std::string parts;
             const rdl2::Geometry* geometry = mRenderContext->handlePickGeometryPart(x, y, parts);
-            if (geometry) { return geometry->getName() + ", " + parts + ""; }
+            if (geometry) { return geometry->getName() + ", " + parts + "\n" + geometry->getSceneClass().getName(); }
         }
         break;
     case INSPECT_MATERIAL:
         {
             const rdl2::Material *material = mRenderContext->handlePickMaterial(x, y);
-            if (material) { return material->getName() + ""; }
+            if (material) { return material->getName() + "\n" + material->getSceneClass().getName(); }
         }
         break;
     }
