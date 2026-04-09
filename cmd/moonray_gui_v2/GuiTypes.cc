@@ -17,6 +17,7 @@ std::string getActionName(const Action action) {
     case ACTION_CAM_SPEED_UP:                   return "Camera Speed Up";
     case ACTION_CAM_RESET:                      return "Camera Reset";
     case ACTION_CAM_RECENTER:                   return "Camera Recenter";
+    case ACTION_CAM_FRAME_SCENE:                return "Camera Frame Scene";
     case ACTION_CAM_PRINT_MATRICES:             return "Camera Print Matrices";
     case ACTION_CAM_SET_UP_VECTOR:              return "Camera Set Up Vector";
     case ACTION_CAM_ROTATE:                     return "Camera Rotation";
@@ -84,6 +85,7 @@ std::string getDescription(const Action action) {
     case ACTION_CAM_SPEED_UP:                   return "Increase movement speed";
     case ACTION_CAM_RESET:                      return "Reset camera to initial position and orientation";
     case ACTION_CAM_RECENTER:                   return "Recenter camera on point of interest";
+    case ACTION_CAM_FRAME_SCENE:                return "Reorient and zoom camera to frame the entire scene";
     case ACTION_CAM_PRINT_MATRICES:             return "Print camera matrix to console";
     case ACTION_CAM_SET_UP_VECTOR:              return "Set camera upright (remove roll)";
     case ACTION_CAM_ROTATE:                     return "Rotate camera based on mouse movement";

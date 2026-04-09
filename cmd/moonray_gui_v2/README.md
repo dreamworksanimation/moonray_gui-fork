@@ -30,6 +30,7 @@ Here are the hotkey mappings (the changed hotkeys have stars next to them):
 | Speed Up | `E` | |
 | Reset | `R` | |
 | Recenter | `F` | |
+| Frame Scene | `SHIFT` + `F` | new |
 | Print Matrices* | `M` | Previously `T` |
 | Set Up Vector | `U` | |
 | Orbit* | `ALT`+`LMB` | FreeCam previously used `LMB` only |

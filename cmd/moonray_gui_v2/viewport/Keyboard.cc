@@ -54,6 +54,7 @@ KeyboardBindings::KeyboardBindings()
     mKeyBindings.insert(KeyModPair(GLFW_KEY_SPACE, MOD_NONE), ACTION_CAM_UP);
 
     mKeyBindings.insert(KeyModPair(GLFW_KEY_A, GLFW_MOD_SHIFT), ACTION_WINDOW_TOGGLE_AXIS_DISPLAY);
+    mKeyBindings.insert(KeyModPair(GLFW_KEY_F, GLFW_MOD_SHIFT), ACTION_CAM_FRAME_SCENE);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_N, GLFW_MOD_SHIFT), ACTION_DENOISE_TOGGLE_MODE);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_V, GLFW_MOD_SHIFT), ACTION_PATH_VISUALIZER_ON_OFF);
     mKeyBindings.insert(KeyModPair(GLFW_KEY_X, GLFW_MOD_SHIFT), ACTION_EXPOSURE_RESET);
